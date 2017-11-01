@@ -1,0 +1,19 @@
+<?php 
+
+// app API key
+CONST API_KEY = "";
+
+// mysql db info
+CONST MYSQL_HOST 		= '';
+CONST MYSQL_USER 		= '';
+CONST MYSQL_PASSWORD 	= '';
+CONST MYSQL_DB_NAME 	= '';
+CONST MYSQL_PORT 		= 1234;
+
+
+// aws info
+CONST AWS_ACCESS_KEY 			= '';
+CONST AWS_SECRET_KEY 			= '';
+CONST AWS_VERSION 				= '';
+CONST AWS_REGION 				= '';
+CONST AWS_PLAYFAB_BUCKET_NAME 	= '';
