@@ -1,15 +1,14 @@
-<?php 
-date_default_timezone_set('Europe/Istanbul');
+<?php  
+date_default_timezone_set('UTC');
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
 ini_set("log_errors", 1);
 ini_set("error_log", "php-error.log");
-error_log( "Hello, errors!" );
 
 require_once "../config.php";
-require "../AwsOperations.php";
-require "../MysqlOperations.php";
-require "../aws/aws-autoloader.php";
+require_once "../AwsOperations.php";
+require_once "../MysqlOperations.php";
+require_once "../aws/aws-autoloader.php";
 
 class Sync_playfab_events extends MysqlOperations {
 
@@ -17,11 +16,8 @@ class Sync_playfab_events extends MysqlOperations {
     public $events_data;
 
     public function __construct(){
-
-//phpinfo();
-//die;
         parent::__construct();
-$this->config_api_key = API_KEY;
+        $this->config_api_key = API_KEY;
         $this->events_data = array (
             array (
                 "event_name" => "player_created",
@@ -105,7 +101,7 @@ $this->config_api_key = API_KEY;
 
                 // Inserting them in mysql table
                 if($objectsReceived>0){
-    $this->setObjectsMysql($object_table,$objectsArray);
+                    $this->setObjectsMysql($object_table,$objectsArray);
                 }    
             }
         }
